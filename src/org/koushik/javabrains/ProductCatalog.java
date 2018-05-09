@@ -22,10 +22,13 @@ public class ProductCatalog {
 		
 	}
 	
+	@WebMethod(exclude=true)
 	public List<String> getProducts(String category){
 		return productService.getProducts(category);
 	}
 	
+	
+	@WebMethod(exclude=true)	 
 	public boolean addProduct(String category, String product){
 		return productService.addProduct(category, product);
 	}
