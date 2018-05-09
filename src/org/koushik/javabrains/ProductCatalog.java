@@ -27,7 +27,12 @@ public class ProductCatalog {
 		return productService.getProducts(category);
 	}
 	
+<<<<<<< HEAD
 	@WebMethod(exclude=true)
+=======
+	
+	@WebMethod(exclude=true)	 
+>>>>>>> SOAP_Web_Services-10-Understanding_the_WSDL
 	public boolean addProduct(String category, String product){
 		return productService.addProduct(category, product);
 	}
