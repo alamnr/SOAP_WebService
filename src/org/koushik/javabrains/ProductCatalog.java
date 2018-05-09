@@ -9,12 +9,13 @@ import javax.jws.WebService;
 import org.koushik.javabrains.business.ProductServiceImpl;
 
 
-@WebService
+@WebService(name="TestMartCatalog", portName="TestMartCatalogPort", serviceName="TestMartCatalogService", targetNamespace="http://www.testmart.com")
 public class ProductCatalog {
 	
 	ProductServiceImpl productService = new ProductServiceImpl(); 
 	
-	@WebMethod // @Webmethod - annotation is optional . By default all public methods are considered as service operation
+	 // @Webmethod - annotation is optional . By default all public methods are considered as service operation
+	@WebMethod(action="fetch_categories", operationName="fetchCategories")
 	public List<String> getProductCatagory(){
 		
 		return productService.getProductCatagory();
