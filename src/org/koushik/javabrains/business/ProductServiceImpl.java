@@ -3,6 +3,8 @@ package org.koushik.javabrains.business;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.koushik.javabrains.model.Product;
+
 public class ProductServiceImpl {
 
 	List<String> bookList = new ArrayList<>();
@@ -44,6 +46,18 @@ public class ProductServiceImpl {
 			return movieList;
 		}
 		return null ;
+	}
+	
+	
+public List<Product> getProductsV2(String category) {
+		
+		List<Product> productList = new ArrayList<>();
+		productList.add(new Product("Java Brains Book","1234",555));
+		productList.add(new Product("Goose Book","abc345",444));
+		productList.add(new Product("Geese Book","bnm321",888));
+		
+		return productList;
+		
 	}
 	
 	public boolean addProduct(String category, String product){
