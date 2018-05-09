@@ -3,19 +3,31 @@ package org.koushik.javabrains;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.jws.WebMethod;
 import javax.jws.WebService;
+
+import org.koushik.javabrains.business.ProductServiceImpl;
 
 
 @WebService
 public class ProductCatalog {
 	
+	ProductServiceImpl productService = new ProductServiceImpl(); 
+	
+	@WebMethod // @Webmethod - annotation is optional . By default all public methods are considered as service operation
 	public List<String> getProductCatagory(){
 		
-		List<String> categories = new ArrayList();
-		categories.add("Books");
-		categories.add("Music");
-		categories.add("Movies");
-		return categories;
+		return productService.getProductCatagory();
+		
+		
+	}
+	
+	public List<String> getProducts(String category){
+		return productService.getProducts(category);
+	}
+	
+	public boolean addProduct(String category, String product){
+		return productService.addProduct(category, product);
 	}
 
 }
