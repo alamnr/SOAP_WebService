@@ -1,7 +1,14 @@
 package org.koushik.javabrains.model;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlRootElement(name="Product")
+@XmlType(propOrder={"price","sku","name"})
 public class Product {
 
+	
 	private String name;
 	private String sku;
 	private double price;
@@ -11,7 +18,12 @@ public class Product {
 		this.sku = sku;
 		this.price = price;
 	}
+	
+	public Product(){
+		
+	}
 
+	@XmlElement(name="ProductName")
 	public String getName() {
 		return name;
 	}

@@ -10,7 +10,7 @@ import org.koushik.javabrains.business.ProductServiceImpl;
 import org.koushik.javabrains.model.Product;
 
 
-@WebService(endpointInterface="org.koushik.javabrains.IProductCatalog")
+@WebService(endpointInterface="org.koushik.javabrains.IProductCatalog",portName="TestMartCatalogPort", serviceName="TestMartCatalogService")
 public class ProductCatalog implements   IProductCatalog {
 	
 	ProductServiceImpl productService = new ProductServiceImpl(); 

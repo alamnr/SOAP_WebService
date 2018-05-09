@@ -3,11 +3,12 @@ package org.koushik.javabrains;
 import java.util.List;
 
 import javax.jws.WebMethod;
+import javax.jws.WebResult;
 import javax.jws.WebService;
 
 import org.koushik.javabrains.model.Product;
 
-@WebService(name="TestMartCatalog", portName="TestMartCatalogPort", serviceName="TestMartCatalogService", targetNamespace="http://www.testmart.com")
+@WebService(name="TestMartCatalog", targetNamespace="http://www.testmart.com")
 public interface IProductCatalog {
 
 	// @Webmethod - annotation is optional . By default all public methods are considered as service operation
@@ -18,6 +19,7 @@ public interface IProductCatalog {
 	List<String> getProducts(String category);
 
 	@WebMethod
+	@WebResult(name="Product")
 	List<Product> getProducts2(String category);
 
 	@WebMethod
